@@ -10,7 +10,7 @@
     let range;
     // get checked value
     function getCheckedRadio() {
-        let cheked = "0deg";
+        let cheked;
         colorDirection.forEach(element => {
             if (element.checked) checked = element.value;
         });
@@ -27,13 +27,9 @@
     function updateValues(e) {
         getCheckedRadio();
         setLabel();
-        if (e && e.target.parentElement.className === "radios") {
-            range = getCheckedRadio();
-        } else {
-            range = ranges.value + "deg";
-        }
+        range = (e && e.target.parentElement.className === "radios") ? getCheckedRadio() : ranges.value + "deg";
         setBodyBackground();
-        colorOut.value = setGradient();
+        colorOut.value = "background:" + setGradient() + ";";
     }
 
     //set gradient string
