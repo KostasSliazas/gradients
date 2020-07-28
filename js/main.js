@@ -10,7 +10,7 @@
     let range;
     // get checked value
     function getCheckedRadio() {
-        let cheked;
+        let checked;
         colorDirection.forEach(element => {
             if (element.checked) checked = element.value;
         });
